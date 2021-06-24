@@ -14,6 +14,8 @@ pipeline {
             for(int i=1; i<commitMsgPre.size(); i++){
             commitMsg += commitMsgPre.getAt(i) + " "}
             echo "Running ${commitMsg}"
+            ls -la
+            pwd
             
                 }
             }
