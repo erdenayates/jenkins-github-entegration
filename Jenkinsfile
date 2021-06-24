@@ -15,8 +15,6 @@ pipeline {
             for(int i=1; i<commitMsgPre.size(); i++){
             commitMsg += commitMsgPre.getAt(i) + " "}
             echo "${commitMsg}"
-            app_name=`echo ${commitMsg}| awk -F '--' '{print $2}'`
-            echo "${app_name} is build just started"
                 }
             }
             
@@ -24,8 +22,9 @@ pipeline {
         stage('Setting the variables values') {
             steps {
             sh '''#!/bin/bash
-                 app_name=`echo ${commitMsg}| awk -F '--' '{print $2}'`
-                 echo "${app_name} is build just started"
+                 echo "${commitMsg}"
+                 echo "${commitMsg}"
+                 echo "${commitMsg}"
                '''
     }
 }
