@@ -4,7 +4,8 @@ pipeline {
         stage('Setting the variables values') {
             steps {
             sh '''#!/bin/bash
-                 echo "hello world" 
+                 ls -la
+                 pwd 
                '''
     }
 }
@@ -21,7 +22,7 @@ pipeline {
 
             for(int i=1; i<commitMsgPre.size(); i++){
             commitMsg += commitMsgPre.getAt(i) + " "}
-            echo "Running ${commitMsg}"
+            echo "${commitMsg}"
             
                 }
             }
