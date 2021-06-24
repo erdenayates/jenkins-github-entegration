@@ -23,6 +23,8 @@ pipeline {
             steps {
             shell '''#!/bin/bash
                  echo "${commitMsg}"
+                 ls -la
+                 pwd
                '''
     }
 }
