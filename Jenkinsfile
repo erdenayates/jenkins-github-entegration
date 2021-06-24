@@ -16,16 +16,10 @@ pipeline {
             commitMsg += commitMsgPre.getAt(i) + " "}
             echo "${commitMsg}"
                 }
+                echo "slkjalkdjasldkjasld"
             }
             
         }
-        stage('Setting the variables values') {
-    steps {
-         sh '''#!/bin/bash
-                 echo "hello world" 
-         '''
-    }
-}
         stage('Setting the variables values') {
             steps {
             shell '''#!/bin/bash
