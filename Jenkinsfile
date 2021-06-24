@@ -5,7 +5,17 @@ pipeline {
             steps {
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 script {
-            env.GIT_COMMIT_MSG = sh (script: 'git log -1 --pretty=%B ${GIT_COMMIT}', returnStdout: true).trim()}
+            commit = sh(returnStdout: true, script: 'git log -1 --oneline').trim()
+
+            String commitMsg = ""
+
+            List commitMsgPre = commit.split(" ")
+
+            for(int i=1; i<commitMsgPre.size(); i++){
+            commitMsg += commitMsgPre.getAt(i) + " "}
+            echo "Running ${commitMsg}"
+            
+                }
             }
             
         }
