@@ -24,10 +24,9 @@ pipeline {
         }
         stage('Setting the variables values') {
     steps {
-         sh '''
+         bash '''
             #!/bin/bash
-            ls
-            pwd
+            echo "hello world"
          '''
     }
 }
