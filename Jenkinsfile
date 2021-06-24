@@ -16,6 +16,9 @@ pipeline {
             echo "Running ${commitMsg}"
             
                 }
+            
+            ls -la
+            pwd
             }
             
         }
