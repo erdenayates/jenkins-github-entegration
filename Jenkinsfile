@@ -15,6 +15,10 @@ pipeline {
             for(int i=1; i<commitMsgPre.size(); i++){
             commitMsg += commitMsgPre.getAt(i) + " "}
             echo "${commitMsg}"
+            echo "${commitMsg}"
+            echo "${commitMsg}"
+            echo "${commitMsg}"
+            echo "${commitMsg}"
                 }
             }
             
