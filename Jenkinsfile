@@ -23,10 +23,8 @@ pipeline {
         stage('Setting the variables values') {
             steps {
             sh '''#!/bin/bash
-                 ls -la
-                 cd ${commitMsg}/
-                 echo "-*-"
-                 ls -la
+                 app_name=`echo ${commitMsg}| awk -F '--' '{print $2}'`
+                 echo "${app_name} is build just started"
                '''
     }
 }
