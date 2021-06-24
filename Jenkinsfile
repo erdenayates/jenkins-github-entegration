@@ -1,15 +1,15 @@
 pipeline {
     agent any
     stages {
-        stage('Example') {
-            stage('Setting the variables values') {
-                steps {
-                 sh '''#!/bin/bash
-                 ls -la
-                 pwd 
-                 '''
+        stage('Setting the variables values') {
+            steps {
+            sh '''#!/bin/bash
+                 echo "hello world" 
+               '''
     }
 }
+
+        stage('Example') {
             steps {
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 script {
