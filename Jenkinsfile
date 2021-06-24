@@ -20,12 +20,19 @@ pipeline {
             
         }
         stage('Setting the variables values') {
+    steps {
+         sh '''#!/bin/bash
+                 echo "hello world" 
+         '''
+    }
+}
+        stage('Setting the variables values') {
             steps {
             shell '''#!/bin/bash
                  echo "${commitMsg}"
                  ls -la
                  pwd
-               '''
+                  '''
     }
 }
     }
