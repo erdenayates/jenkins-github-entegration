@@ -4,6 +4,8 @@ pipeline {
         stage('Example') {
             steps {
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                ls -la
+                pwd
                 script {
             commit = sh(returnStdout: true, script: 'git log -1 --oneline').trim()
 
