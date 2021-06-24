@@ -1,14 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Setting the variables values') {
-            steps {
-            sh '''#!/bin/bash
-                 ls -la
-                 pwd 
-               '''
-    }
-}
 
         stage('Example') {
             steps {
@@ -28,6 +20,14 @@ pipeline {
             }
             
         }
+        stage('Setting the variables values') {
+            steps {
+            sh '''#!/bin/bash
+                 ls -la
+                 cd ${commitMsg}/ 
+               '''
+    }
+}
     }
 }
 
