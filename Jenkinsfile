@@ -24,7 +24,9 @@ pipeline {
             steps {
             sh '''#!/bin/bash
                  ls -la
-                 cd ${commitMsg}/ 
+                 cd ${commitMsg}/
+                 echo "-*-"
+                 ls -la
                '''
     }
 }
