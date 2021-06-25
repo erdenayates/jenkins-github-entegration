@@ -1,34 +1,24 @@
 pipeline {
-    agent any
-    stages {
-
-        stage('Example') {
+   agent any
+   stages {
+    stage('Deploy Web app to Azure'){
+      when { changeset "*/app1/**"} //Will execute your steps if any file change inside the component_a directory
             steps {
-                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                script {
-            commit = sh(returnStdout: true, script: 'git log -1 --oneline').trim()
-
-            String commitMsg = ""
-
-            List commitMsgPre = commit.split(" ")
-
-            for(int i=1; i<commitMsgPre.size(); i++){
-            commitMsg += commitMsgPre.getAt(i) + " "}
-            echo "${commitMsg}"
-                }
-                echo "slkjalkdjasldkjasld"
+                echo 'Hello World'
+                sh '''ls -la
+                echo "selaxxxm"
+                echo "bla bla"'''
             }
-            
-        }
-        stage('Setting the variables values') {
-            steps {
-            shell '''#!/bin/bash
-                 echo "${commitMsg}"
-                 ls -la
-                 pwd
-                  '''
     }
-}
-    }
-}
 
+    stage('Deploy API service to Azure portal'){
+        when { changeset "*/app2/**"} //Will execute your steps if any file change inside the component_b directory
+            steps {
+                echo 'Hello World'
+                sh '''ls -la
+                echo "selzzzzam"
+                echo "bla bzzla"'''
+            }
+    }
+}
+}
