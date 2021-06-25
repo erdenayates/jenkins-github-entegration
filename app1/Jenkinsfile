@@ -15,7 +15,7 @@ pipeline {
             commitMsg += commitMsgPre.getAt(i) + " "}
             echo "Running ${commitMsg}"
             
-                }
+                }asdasdasdas
             }
             
         }
