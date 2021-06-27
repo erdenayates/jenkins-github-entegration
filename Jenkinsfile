@@ -2,7 +2,7 @@ pipeline {
    agent any
    stages {
     stage('Deploy Web app to Azure'){
-      when { changeset "*/app1/**"} //Will execute your steps if any file change inside the component_a directory
+      when { changeset "app1/**"} //Will execute your steps if any file change inside the component_a directory
             steps {
                 echo 'Hello World'
                 sh '''ls -la
@@ -12,7 +12,7 @@ pipeline {
     }
 
     stage('Deploy API service to Azure portal'){
-        when { changeset "*/app2/**"} //Will execute your steps if any file change inside the component_b directory
+        when { changeset "app2/**"} //Will execute your steps if any file change inside the component_b directory
             steps {
                 echo 'Hello World'
                 sh '''ls -la
